@@ -21,7 +21,7 @@ async def newsletter_subscribe_group(worker: str, q: asyncio.Queue) -> None:
             resp = await session.post(
                 "https://www.moonpay.com/api/newsletter-subscribe-group",
                 json={
-                    "email": "wfwfwf@gmail.com",
+                    "email": email,
                     "subscriptionGroupId": "e23fa93e-ab94-4c48-a0bb-2f8f69ceb831"
                 }
             )
