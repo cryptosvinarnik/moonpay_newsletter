@@ -27,7 +27,6 @@ async def newsletter_subscribe_group(worker: str, q: asyncio.Queue) -> None:
             )
 
         if "true" in (resp_text := await resp.text()):
-            logger.success(f"{worker} - {email} successfully registered!")
+            logger.success(f"({worker}) {email} successfully registered!")
         else:
-            logger.error(f"{worker} - {email} - {resp_text}")
-            continue
+            logger.error(f"({worker}) - {email} - {resp_text}")
